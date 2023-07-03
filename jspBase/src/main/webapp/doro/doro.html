@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RecipeMall-마이페이지</title>
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/mypage.css">
+    <link rel="stylesheet" href="css/mypage_2_3.css">
+</head>
+<style>
+	.mypage_content>h3 {
+    padding: 35px 0 8px 0;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+.mypage_content_aHeader h4 {
+    padding: 20px 0 10px 0;
+    width: 100%;
+}
+.mypage_content_address{
+    padding: 15px 15px 15px 0;
+    width: 100%;
+}
+.mypage_content_address table {
+    width: 100%;
+    border: 0;
+    border-spacing: 0;
+    border-collapse: collapse;
+    text-align: center;
+}
+.mypage_content_address table th {
+    padding: 10px 15px 10px 20px;
+    color: #777777;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    background: #e3e2e2;
+    text-align: left;
+}
+.mypage_content_address .important {
+    padding: 0 0 0 10px;
+    margin: 0 0 0 -10px;
+    background: url(../image/icon_dot.png) no-repeat 0 center;
+}
+.mypage_content_address table td {
+    height: 31px;
+    padding: 10px 15px 10px 15px;
+    color: #777777;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
+}
+.mypage_content_address table input {
+    width: 190px;
+    height: 33px;
+}
+.mypage_content_address table input[type="text"] {
+    color: black;
+    border: 1px solid #d6d6d6;
+    line-height: 37px;
+    box-sizing: border-box;
+    border-radius: 4px;
+}
+
+.mypage_content_address table .address_postcode input{
+    float: left;
+    width: 190px;
+}
+.mypage_content_address table .btn_post_search {
+    float: left;
+    margin: 0 0 0 5px;
+    padding: 5px 10px 5px 10px;
+    border: 1px solid #989898;
+    cursor: pointer;
+}
+.mypage_content_address table .address_input{
+    margin-top: 5px;
+    float: left;
+    width: 100%;
+}
+.mypage_content_address table .address_input input:first-child {
+    width: 300px;
+}
+.mypage_content_address_submit {
+    margin-top: 15px;
+    text-align: center;
+}
+.btn__address_cancel{
+    display: inline-block;
+    width: 100px;
+    height: 45px;
+    padding: 0 5px 0 5px;
+    color: black;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-right: 20px;
+}
+.btn_address_submit{
+    display: inline-block;
+    width: 100px;
+    height: 45px;
+    padding: 0 5px 0 5px;
+    color: #fff;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    background: #2ebaf1;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 4px;
+}
+</style>
+<body>
+     <!--[s]건너뛰기 링크-->
+     <a id="skipNav" href="">본문 바로가기</a>
+     <!--[e]건너뛰기 링크-->
+    <!-- [s]Header 영역 -->
+    <header>
+        <!--[s]메인메뉴 영역 -->
+        <div>
+            <ul class="mainmenu">
+                <li class="main" title="메인페이지로 이동"><a href="index.html">레시피몰</a></li>
+                <li><a href="#">커뮤니티</a></li>
+                <li><a href="#">쇼핑</a></li>
+            </ul>
+        </div>
+        <!--[e]메인메뉴 영역 -->
+        <!--[s]서브 영역 -->
+        <div>
+            <ul class="submenu"> <!--submenu-->
+                <li><a href="#" class="cart"><img src="image/empty.png" alt="cart"></a></li>
+                <li><a href="#">로그인</a></li>
+                <li><a href="#">회원가입</a></li>
+                <li><a href="#">고객센터</a></li>
+                <li><button class="btn_write">글쓰기</button></li>
+            </ul>
+        </div>
+        <!--[e]서브 영역 -->
+
+
+        <!--[s]검색 영역 -->
+        <div class="formtag">
+            <form action="#" method="get" name="#">
+                <input type="text" name="#" id="#" class="search">
+            </form>
+        </div>
+        <!--[e]검색 영역-->
+
+        
+        <div class="textline"></div>
+        <!--[s]카테고리 영역 -->
+        <div>
+            <ul class="category">
+                <li><a href="recipe.html">레시피</a></li>
+                <li><a href="#">베스트</a></li>
+                <li><a href="#">자유게시판</a></li>
+            </ul>
+        </div>
+        <!--[e]카테고리 영역 -->
+
+        <!--[s]실시간차트 영역-->
+        <div class="rank">
+            <ul>
+                <li><a href="#">1.레시피</a></li>
+            </ul>
+        </div>
+        <!--[e]실시간차트 영역 -->
+        <div class="textline"></div>
+    </header>
+    <!-- [s]Header 영역 -->
+    <!-- content_mypage_s -->
+    <div id="main_content" class="mypage_box">
+        <div id="mypage">
+            <h2 class="mypage_title"><a href="mypage.html">마이페이지</a></h2>
+            <!-- sidebar -->
+            <div class="side_bar">
+                <!-- user_info:회원 프로필사진,포인트,출석체크 -->
+                <div class="user_info_box">
+                    <div class="user_profile">
+                        <img src="image/user.png" alt="user">
+                    </div>
+                    <p>현재 포인트 14330</p>
+                    <button class="check_attend">출석체크</button>
+                </div>
+                <!-- mypage menu -->
+                <div class="mypage_menu">
+                    <ul class="main_menu">
+                        <li><a href="#">내 정보</a></li>
+                        <li><a href="#">주문/배송</a>
+                            <ul class="sub_menu">
+                                <li><a href="mypage_main_2_1.html">- 주문목록/배송조회</a></li>
+                                <li><a href="mypage_main_2_2.html">- 취소/반품/교환 내역</a></li>
+                                <li><a href="mypage_main_2_3.html">- 배송지 등록</a></li>
+                                <li><a href="mypage_main_2_4.html">- 장바구니</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">상품</a>
+                            <ul class="sub_menu">
+                                <li><a href="#">- 상품 문의</a></li>
+                                <li><a href="#">- 상품 리뷰</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">글/댓글 관리</a>
+                            <ul class="sub_menu">
+                                <li><a href="#">- 글 </a></li>
+                                <li><a href="#">- 댓글</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">차단 목록</a></li>
+                        <li><a href="#">고객센터</a>
+                            <ul class="sub_menu">
+                                <li><a href="#">- 자주하는 질문</a></li>
+                                <li><a href="#">- 일대일 문의</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- sidebar -->
+            <!-- mypage_content -->
+            <div class="mypage_content">
+                <!-- mypage_content 배송지등록 시작-->
+                <h3>나의 배송지 관리</h3>
+                <div class="mypage_content_aHeader">
+                    <h4>배송지 등록</h4>
+                </div>
+                <div class="mypage_content_address">
+                    <table>
+                        <colgroup>
+                            <col style="width: 20%;">
+                            <col style="width: 80%;">
+                        </colgroup>
+                        <tr>
+                            <th><span class="important">배송지 이름</span></th>
+                            <td>
+                                <input type="text" name="shipping_title">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><span class="important">받으실 분</span></th>
+                            <td>
+                                <input type="text" name="shipping_name" maxlength="20">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><span class="important">받으실 곳</span></th>
+                            <td class="member_address">
+                                <div class="address_postcode">
+                                    <input type="text" name="shipping_zonecode" id="address_postcode_sub">
+                                    <button type="button" onclick="sample4_execDaumPostcode();" class="btn_post_search">우편번호검색</button>
+                                    <input type="hidden" name="shipping_zipcode" >
+                                </div>
+                                <div class="address_input">
+                                    <input type="text" name="shipping_address" id="shipping_address">
+                                    <input type="text" name="shipping_address_sub" id="shipping_address_sub" placeholder="상세주소를 입력해주세요"> 
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>전화번호</th>
+                            <td>
+                                <input type="text" name="shipping_phone" id="shipping_phone">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th><span class="important">휴대폰 번호</span></th>
+                            <td>
+                                <input type="text" name="shipping_cellphone">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="mypage_content_address_submit">
+                    <button type="button" class="btn__address_cancel">
+                        <Strong>취소</Strong>
+                    </button>
+                    <button type="submit" class="btn_address_submit">
+                        <strong>저장</strong>
+                    </button>
+                </div>
+                <!-- mypage_content_배송지등록 끝-->
+            </div>
+            <!-- mypage_content -->
+        </div>
+    </div>
+    <!-- content_mypage_e -->
+
+    <!-- footer_s -->
+    <!-- [s]footer 영역 -->
+    <footer>
+        <!--[s]푸터 컨테이너 영역 -->
+        <div class="f_container flex_area_rsb">
+            <!--[s] footer left & 안내 영역 -->
+            <div class="information f_left">
+                <p class="infor"><a href="#">고객센터</a></p>
+                <p class="infor">1670-0876</p>
+                <span>09:00 ~ 16:00</span>
+                <p class="inquiry">평일:전체 문의 상담 가능</p>
+                <p class="inquiry">주말,공휴일:영업종료</p>
+                <p class="kakao">카톡 상담(평일) 09:00 ~ 16:00</p>
+                <button class="emailbtn" onclick="">이메일문의</button>
+            </div>
+            <!--[e]footer left & 안내 영역-->
+            <!--[s]footer middle & 회사 소개 영역-->
+            <div class="company_introduction1 f_middle flex_area_rsb">
+                <ul >
+                    <li><a href="#">회사 소개</a></li>
+                    <li><a href="#">채용 정보</a></li>
+                    <li><a href="#">이용약관</a></li>
+                    <li><a href="#"><strong>개인정보 처리 방침</strong></a></li>
+                    <li><a href="#">공지사항</a></li>
+                    <li><a href="#">안전거래센터</a></li>
+                </ul>
+                <ul >
+                    <li><a href="#">입점신청</a></li>
+                    <li><a href="#">제휴/광고 문의</a></li>
+                    <li><a href="#">사업자구매 회원</a></li>
+                    <li><a href="#">파트너 안내</a></li>
+                    <li><a href="#">상품광고 소개</a></li>
+                    <li><a href="#">고객의 소리</a></li>
+                </ul>
+            </div>
+            <!--[e]footer middle & 회사 소개 영역-->
+            <!--[s]footer right 영역-->
+
+
+            <!--[e]footer right 영역-->
+            <div class="f_right">
+                <!--[e]회사 소개2 영역 -->
+                <div class="company_introduction2">
+                    <address>
+                        (주)이젠아카데미 <span class="icon_1">공동대표 한끼일동</span><br>
+                        서울 종로구 winner@1119.com <span class="icon_2">사업자등록번호 166-3453-34-4431
+                            <Strong>사업자정보확인</Strong> <br>
+                            통신판매업신고번호 제2023-4-23 서울 종로 - 12045호
+                    </address>
+                </div>
+                    <!--[s]안전거래 영역 -->
+                    <div class="save">
+                    <img src="#" alt="서비스운영"> <span>레시피몰 서비스 운영</span><br>
+                    <span>2021-05-01 ~ 2026-07-09</span>
+                    <img src="#" alt="안전거래"> <span>고객님이 현금결재한 금액에 대해<br> 우리은행과
+                        채무지급 보증 계약을 체결하여 안전거래를
+                        보장 하고 있습니다.</span>
+                </div>
+                <!--[e]안전거래 영역 -->
+                <!--[s]셀러 영역 -->
+                <div class="seller">
+                    <span>(주)이젠아카데미는 통신판매업중개자로 당사자가 아니므로,<br> 판매자가 등록한 상품정보 및 거래 등에 대해 책임을 지지 않습니다.
+                        <br>단 (주)이젠아카데미가 판매자로 등록한 상품은 판매자로서 책임을 부담합니다.</span>
+                </div>
+                <!--[e]셀러 영역 -->
+
+                <!--[s]소셜네트워크 영역 -->
+                <div class="img_icon">
+                    <a href=""><img src="#" alt="인스타그램"></a>
+                    <a href=""><img src="#" alt="페이스북"></a>
+                    <a href=""><img src="#" alt="트위터"></a>
+                    <a href=""><img src="#" alt="유튜브"></a>
+                </div>
+                <!--[e]소셜네트워크 영역 -->
+
+                <!--[s]카피라이터 영역 -->
+                <div class="copyright">
+                    <p>Copyright 2014. buketplace, Co.,Ltd All rights reserved</p>
+                </div>
+                <!--[e]카피라이터 영역 -->
+            </div>
+        </div>
+        <!--[e]푸터 컨테이너 영역 -->
+    </footer>
+    <!-- [e]footer 영역 -->
+    <!-- footer_e -->
+    <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+    //본 예제에서는 도로명 주소 표기 방식에 대한 법령에 따라, 내려오는 데이터를 조합하여 올바른 주소를 구성하는 방법을 설명합니다.
+    function sample4_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
+
+                // 도로명 주소의 노출 규칙에 따라 주소를 표시한다.
+                // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
+                var roadAddr = data.roadAddress; // 도로명 주소 변수
+                var extraRoadAddr = ''; // 참고 항목 변수
+
+                // 법정동명이 있을 경우 추가한다. (법정리는 제외)
+                // 법정동의 경우 마지막 문자가 "동/로/가"로 끝난다.
+                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                    extraRoadAddr += data.bname;
+                }
+                // 건물명이 있고, 공동주택일 경우 추가한다.
+                if(data.buildingName !== '' && data.apartment === 'Y'){
+                   extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                }
+                // 표시할 참고항목이 있을 경우, 괄호까지 추가한 최종 문자열을 만든다.
+                if(extraRoadAddr !== ''){
+                    extraRoadAddr = ' (' + extraRoadAddr + ')';
+                }
+
+                // 우편번호와 주소 정보를 해당 필드에 넣는다.
+                document.getElementById('address_postcode_sub').value = data.zonecode;
+                document.getElementById("shipping_address").value = roadAddr;
+                document.getElementById("").value = data.jibunAddress;
+                
+                // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+                if(roadAddr !== ''){
+                    document.getElementById("sample4_extraAddress").value = extraRoadAddr;
+                } else {
+                    document.getElementById("sample4_extraAddress").value = '';
+                }
+
+                var guideTextBox = document.getElementById("guide");
+                // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+                if(data.autoRoadAddress) {
+                    var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
+                    guideTextBox.innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
+                    guideTextBox.style.display = 'block';
+
+                } else if(data.autoJibunAddress) {
+                    var expJibunAddr = data.autoJibunAddress;
+                    guideTextBox.innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
+                    guideTextBox.style.display = 'block';
+                } else {
+                    guideTextBox.innerHTML = '';
+                    guideTextBox.style.display = 'none';
+                }
+            }
+        }).open();
+    }
+</script>
+</body>
+</html>
