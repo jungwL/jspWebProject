@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>서버로 전송하기</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+	function fn_server() {
+		$.ajax({
+			type : "post",
+			dataType : "xml",
+			async : false,  
+			url : "http://127.0.0.1:8090/jspjquery/ajax2",   
+			success : function(info,textStatus){ 
+				$(info).find("book").each(function() {
+					let title=$(this).find("title").text();
+					let writer=$(this).find("writer").text();
+					let image=$(this).find("image").text();
+					$("#bookInfo").append("<p>제목 : " + title + "</p>" + 
+					  "<p>출판사 : " + writer + "</p>" +
+					  "<img src='" +image+"' width=300 height=450>" +
+					  "<p>====================================</p>");
+				});
+			},
+			error: function(data,textStatus,error){ 
+				alert("에러가 발생했습니다.==>" + error);
+			},
+			complete : function(data,textStatus){ 
+				alert("작업을 완료했습니다.");
+			}
+		});
+	}
+
+	
+</script>
+</head>
+<body>
+	<input type="button" value="신간 도서정보 요청" onclick="fn_server();">	
+	<div id="bookInfo">
+		
+	</div>
+</body>
+</html>

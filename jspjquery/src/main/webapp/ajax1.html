@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>서버로 전송하기</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+	function fn_server() {
+		$.ajax({
+			type : "get",
+			dataType : "text",
+			async : false,  
+			url : "http://127.0.0.1:8090/jspjquery/ajax1",  
+			data : {msg : "제이쿼리 ajax 공부중"}, 
+			success : function(data,textStatus){ 
+				$('#message').append(data);
+			},
+			error: function(data,textStatus,error){ 
+				alert("에러가 발생했습니다.==>" + error);
+			},
+			complete : function(data,textStatus){ 
+				alert("작업을 완료했습니다.");
+			}
+		});
+	}
+
+	
+</script>
+</head>
+<body>
+	<input type="button" value="전송하기" onclick="fn_server();">	
+	<div id="message">
+		
+	</div>
+</body>
+</html>

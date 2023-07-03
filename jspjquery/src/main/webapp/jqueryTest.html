@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="http://code.jquery.com/jquery-latest.min.js"></script>
+<script type="text/javascript">
+	
+	$(function() {
+		$('h1').click(function() {
+			$(this).html('안녕하세요');
+		});
+		function change() {
+			$('img').attr('src', './images/boy.png')
+
+		}
+		$('input').click(function() {
+			change();
+		});
+		function fn_output() {
+			let value=$('#content').val();
+			$('#output').append(value+"<br>");
+		}
+	});
+</script>
+</head>
+<body>
+	<h1>제이쿼리 테스트</h1>
+	<div id="imgArea">
+		<img alt="" src="./images/girl.jpg">
+	</div>
+	<input type="button" value="이미지 바꾸기" onclick="change();">
+	<br>
+	<input type="text" id="content">
+   <input type="button" value="내용 출력" class="sub" onclick="fn_output();">
+   <div id="output">
+      <h2>입력한 결과</h2>
+   </div>
+</body>
+</html>
