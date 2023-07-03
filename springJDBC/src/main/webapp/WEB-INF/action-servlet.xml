@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans   
+http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass" value="org.springframework.web.servlet.view.JstlView" />
+		<property name="prefix" value="/WEB-INF/views/"/> <!-- 결과를 돌려줄 view 폴더 -->
+		<property name="suffix" value=".jsp"/>  <!-- 모델엔뷰로 리턴받은 setview.jsp를 설정 위 member란 폴더에서 찾음 -->
+	</bean>
+	<bean id="memberController" class="com.spring.member.controller.MemberControllerImpl">
+		<property name="methodNameResolver">
+			<ref local="methodResolver"/>
+		</property>
+		<property name="memberService" ref="memberService"/>
+	</bean>
+	<bean id="methodResolver" class="org.springframework.web.servlet.mvc.multiaction.PropertiesMethodNameResolver">
+		<property name="mappings">
+			<props>
+				<prop key="/member/listMembers.do">listMembers</prop> <!-- 회원리스트를 보여준다. -->
+				<prop key="/member/addMember.do">addMember</prop> <!--DB가서 회원등록해준다.  -->
+				<prop key="/member/memForm.do">memForm</prop> <!-- memberForm.jsp를 보여준다 -->
+			</props>
+		</property>
+	</bean>
+	<bean id="userUrlMapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+		<property name="mappings">
+			<props>
+				<prop key="/member/*.do">memberController</prop> <!-- memberController로간다. -->
+			</props>
+		</property>
+	</bean>
+</beans>
